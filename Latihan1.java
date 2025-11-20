@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -22,31 +23,25 @@ import java.util.Scanner;
 public class Latihan1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan jumlah siswa: ");
+        int jmlSiswa = sc.nextInt();
+        int[][] scores = new int[jmlSiswa][3];
 
-        int jmlSiswa, tempRata = 0;
-
-        System.out.print("Masukan jumlah mahasiswa: ");
-        jmlSiswa = sc.nextInt();
-        sc.nextLine();
-
-        double rata[] = new double[jmlSiswa];
-        int nilai[][] = new int[jmlSiswa][3];
-
-        for (int i = 0; i < nilai.length; i++) {
-            for (int j = 0; j < nilai[i].length; j++) {
-                System.out.print("Mahasiswa ke-" + i + ", Masukan nilai matkul ke-" + j + " : ");
-                nilai[i][j] = sc.nextInt();
-                tempRata += nilai[i][j];
+        for (int i = 0; i < jmlSiswa; i++) {
+            System.out.println("Input nilai kuis untuk siswa ke-" + (i + 1));
+            for (int j = 0; j < 3; j++) {
+                System.out.print("Nilai kuis ke-" + (j + 1) + ": ");
+                scores[i][j] = sc.nextInt();
             }
-            rata[i] = tempRata / 3;
-            tempRata = 0;
-            System.out.println("Rata-rata nilai : " + rata[i] + "\n");
         }
 
-        for (int i = 0; i < rata.length; i++) {
-            System.out.println("Rata-rata nilai mahasiswa ke-" + i + " : " + rata[i]);
+        System.out.println();
+        for (int i = 0; i < jmlSiswa; i++) {
+            System.out.println("Nilai siswa ke-" + (i + 1) + ": " + Arrays.toString(scores[i]));
+            double rataRata = Arrays.stream(scores[i]).average().orElse(0);
+            System.out.printf("Rata-rata nilai: %.2f\n", rataRata);
+            System.out.println();
         }
-
         sc.close();
     }
 }
