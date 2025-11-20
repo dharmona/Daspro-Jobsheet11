@@ -24,12 +24,12 @@ public class Siakad19 {
         System.out.println("=".repeat(50));
         System.out.println("Rata-rata Nilai setiap Mata Kuliah");
 
-        for (int j = 0; j < nilai[0].length; j++) {
+        for (int i = 0; i < nilai[0].length; i++) {
             double totalPerMatkul = 0;
-            for (int i = 0; i < nilai.length; i++) {
-                totalPerMatkul += nilai[i][j];
+            for (int j = 0; j < nilai.length; j++) {
+                totalPerMatkul += nilai[j][i];
             }
-            System.out.printf("%s %d : %.1f\n", "Mata Kuliah", (j + 1), totalPerMatkul / nilai.length);
+            System.out.printf("%s %d : %.1f\n", "Mata Kuliah", (i + 1), totalPerMatkul / nilai.length);
         }
         sc.close();
     }
