@@ -42,10 +42,6 @@ public class BioskopWithScanner19 {
                     }
                 }
             } else if (menu == 2) {
-                //
-                // NYOBA NGULIK BUAT TAMPILAN SEPERTI TABEL IBU🙏
-                // MOHON MAAF KALAU BERANTAKAN KODE NYA IBU
-                //
                 System.out.println("=".repeat(50));
                 System.out.println("Daftar Penonton:\n");
                 for (int i = 0; i < penonton.length; i++) {
@@ -65,7 +61,6 @@ public class BioskopWithScanner19 {
                     System.out.println("-".repeat((jarakBaris * penonton[0].length) + 8));
                     System.out.print((i + 1) + "| ");
                     for (int j = 0; j < penonton[i].length; j++) {
-                        //TAMPILAN ISI ARRAY DISINI
                         System.out.printf("%-" + jarakBaris +"s | ", penonton[i][j] != null ? penonton[i][j] : "***");
                     }
                     System.out.println();
